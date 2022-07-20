@@ -28,6 +28,7 @@ chai.use(solidity)
           describe("constructor", () => {
               it("Initializes constructor correctly", async () => {
                   const raffleState = await raffle.getRaffleState()
+                  console.log(ethers.utils.formatEther(raffleEntranceFee))
                   assert.equal(raffleState.toString(), "0")
                   assert.equal(interval.toString(), networkConfig[chainId]["interval"])
               })
